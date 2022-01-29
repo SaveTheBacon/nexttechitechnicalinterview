@@ -12,19 +12,21 @@ enum EventType{
 public class Event {
 
     int uniqueIdentifier;
-    GregorianCalendar eventDate;
+    GregorianCalendar eventStartDate;
+    GregorianCalendar eventEndDate;
     EventType eventType;
     String eventDescription;
 
-    public Event(int uniqueIdentifier, GregorianCalendar eventDate, String eventType, String eventDescription) {
+    public Event(int uniqueIdentifier, GregorianCalendar eventStartDate, GregorianCalendar eventEndDate, String eventType, String eventDescription) {
         this.uniqueIdentifier = uniqueIdentifier;
-        this.eventDate = eventDate;
+        this.eventStartDate = eventStartDate;
+        this.eventEndDate = eventEndDate;
         this.eventType = EventType.valueOf(eventType.toUpperCase());
         this.eventDescription = eventDescription;
     }
 
-    public GregorianCalendar getEventDate() {
-        return eventDate;
+    public GregorianCalendar getEventStartDate() {
+        return eventStartDate;
     }
 
     public int getUniqueIdentifier() {
@@ -35,8 +37,16 @@ public class Event {
         this.uniqueIdentifier = uniqueIdentifier;
     }
 
-    public void setEventDate(GregorianCalendar eventDate) {
-        this.eventDate = eventDate;
+    public GregorianCalendar getEventEndDate() {
+        return eventEndDate;
+    }
+
+    public void setEventEndDate(GregorianCalendar eventEndDate) {
+        this.eventEndDate = eventEndDate;
+    }
+
+    public void setEventStartDate(GregorianCalendar eventStartDate) {
+        this.eventStartDate = eventStartDate;
     }
 
     public String getEventType() {
