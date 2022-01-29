@@ -1,1 +1,1 @@
-# nexttechitechnicalinterview
+# Small calendar app concept
